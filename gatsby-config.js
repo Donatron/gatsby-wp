@@ -6,4 +6,27 @@
 
 module.exports = {
   /* Your site config here */
+  siteMetadata: {
+    title: "Gatsby-Bootstrap",
+  },
+  plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `src`,
+        path: `${__dirname}/src/`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+    },
+    {
+      resolve: `gatsby-source-wordpress`,
+      options: {
+        baseUrl: `codingsrc.com`,
+        protocol: `https`,
+        hostingWPCOM: false,
+      },
+    },
+  ],
 }
